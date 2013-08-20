@@ -1,0 +1,13 @@
+<%= form_for @album do |f| %>
+  <%#= f.error_messages %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :status, "Show Image"%>
+    Yes<%= f.radio_button :status, '1' %> 
+		No<%= f.radio_button :status, '0' %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

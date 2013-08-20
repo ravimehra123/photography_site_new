@@ -1,0 +1,32 @@
+<h1>Album Image</h1>
+
+<p>
+  <strong>Album:</strong>
+  <%= @album_image.album_id %>
+</p>
+<p>
+  <strong>Album Image File Name:</strong>
+  <%= image_tag @album_image.album_image.url %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @album_image.status %>
+</p>
+<p>
+  <strong>Order:</strong>
+  <%= @album_image.order_no %>
+</p>
+<p>
+  <strong>Caption:</strong>
+  <%= @album_image.caption %>
+</p>
+<p>
+  <strong>Upload Date:</strong>
+  <%= @album_image.upload_date %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_album_image_path(@album_image) %> |
+  <%= link_to "Destroy", @album_image, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", album_images_path %>
+</p>

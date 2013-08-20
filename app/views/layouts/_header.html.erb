@@ -1,0 +1,17 @@
+<!-- raviiiiiiiiiiiiiiiiiiiiii-->
+<div class="header">
+	<div class="top-menu">
+<<<<<<< HEAD
+  	<%= link_to "GALLERY", albums_path %> / <%= link_to "ABOUT ME", home_about_path %> / <%= link_to "CONTACT", home_contact_us_path %> 
+=======
+  	<% if !@pages.blank?%>
+           <% @pages.each do |page| %>
+
+           	<%= link_to page.title, "/#{page.title}/", :title => page.title, :id => page.title%>
+               <% end %>
+                                     <% end %>
+                                      <%= link_to "Back To Admin", admin_pages_path %> 
+>>>>>>> 457bcf702267e6fa030ae9d20cd22e1730c9dfec
+  </div>
+  <div class="logo"><%= link_to image_tag('poonam_logo.png'), root_url%></div>
+</div>

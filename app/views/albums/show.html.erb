@@ -1,0 +1,28 @@
+<h1>Album</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+<p>
+  <strong>Upload Date:</strong>
+  <%= @album.upload_date %>
+</p>
+<p>
+  <strong>Modify Date:</strong>
+  <%= @album.modify_date %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @album.status %>
+</p>
+<p>
+  <strong>Order:</strong>
+  <%= @album.order_no %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_album_path(@album) %> |
+  <%= link_to "Destroy", @album, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", albums_path %>
+</p>
