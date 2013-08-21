@@ -24,11 +24,10 @@ group :assets do
 end
 
 gem 'jquery-rails'
-<<<<<<< HEAD
+
 gem 'paperclip', '~> 3.0'
-=======
+
 gem 'devise'
->>>>>>> 457bcf702267e6fa030ae9d20cd22e1730c9dfec
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
