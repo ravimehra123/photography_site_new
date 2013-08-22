@@ -13,6 +13,26 @@
 
 ActiveRecord::Schema.define(:version => 20130818155042) do
 
+  create_table "album_images", :force => true do |t|
+    t.integer "album_id"
+    t.string  "album_image_file_name",    :limit => 100
+    t.integer "album_image_file_size"
+    t.string  "album_image_file_type",    :limit => 50
+    t.string  "album_image_content_type", :limit => 50
+    t.string  "status",                   :limit => 1
+    t.integer "order_no"
+    t.text    "caption"
+    t.date    "upload_date"
+  end
+
+  create_table "albums", :force => true do |t|
+    t.string  "title",       :limit => 50
+    t.date    "upload_date"
+    t.date    "modify_date"
+    t.string  "status",      :limit => 1
+    t.integer "order_no",                  :null => false
+  end
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "content"

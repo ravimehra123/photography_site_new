@@ -76,4 +76,8 @@ class AlbumsController < ApplicationController
 		# end
 		redirect_to :action=>'index'
 	end
+
+  def image_album
+   @albums = Album.order("order_no ASC")
+  end
 end
