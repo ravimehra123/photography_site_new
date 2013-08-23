@@ -1,4 +1,5 @@
 <h2>PHOTOGRAPHY - PEPOLE</h2>
+<script type=\"text/javascript\" src=\"http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f22d8163496c001\"></script>
 <script>
   jQuery(function($){
     // alert('hello');
@@ -7,18 +8,22 @@
       continuous: true,
       nextId: "slider1next",
       prevId: "slider1prev"
+      autoplay_slideshow: true,
+      social_tools: '<div class="pp_social"><div class="twitter"><a href="http://twitter.com/share" class="twitter-share-button" data-count="none">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div><div class="facebook"><iframe src="http://www.facebook.com/plugins/like.php?locale=en_US&href='+location.href+'&amp;layout=button_count&amp;show_faces=true&amp;width=500&amp;action=like&amp;font&amp;colorscheme=light&amp;height=23" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:500px; height:23px;" allowTransparency="true"></iframe></div></div>' /* html or false to disable */
     });    
   });
-
+// http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone//
 </script>
 
 <div class="container">
-<div id="slider">
-   <ul>
-      <li><img alt="Photo1" src="/assets/photo1.png" width="100%" /></li>
+  <div id="slider">
+    <ul>
+      <!-- <li><img alt="Photo1" src="/assets/photo1.png" width="100%" /></li>
       <li><img alt="Photo2" src="/assets/photo2.png" width="100%" /></li>
-      <li><img alt="Photo3" src="/assets/photo3.png" width="100%" /></li>
-      <li><img alt="Photo4" src="/assets/photo4.png" width="100%" /></li>     
+      <li><img alt="Photo3" src="/assets/photo3.png" width="100%" /></li> -->
+      <% AlbumImage.all.each do |album_image|  %>
+        <li><%= image_tag album_image.album_image.url(:large) %></li>     
+      <% end %>
     </ul>
   </div>  
 </div>
