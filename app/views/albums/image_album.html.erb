@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/assets/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+<script src="/assets/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    //$(function() {
+    //    $('#gallery a').lightBox();
+    //});
+    $(document).ready(function(){
+    $("a[rel^='prettyPhoto']").prettyPhoto();
+  });
+    </script>
+
+   	<style type="text/css">
+	/* jQuery lightBox plugin - Gallery style */
+	#gallery {
+		/*background-color: #444;
+		padding: 10px;
+		width: 520px;*/
+	}
+	#gallery ul { list-style: none; }
+	#gallery ul li { display: inline; }
+	#gallery ul img {
+		border: 5px solid #3e3e3e;
+		border-width: 5px 5px 20px;
+	}
+	#gallery ul a:hover img {
+		border: 5px solid #fff;
+		border-width: 5px 5px 20px;
+		color: #fff;
+	}
+	#gallery ul a:hover { color: #fff; }
+	</style>
+<h2 class="index_heading">My Gallary</h2>
+<% if !@albums.blank? %>  
+  <div class="main_div_video" >
+    <% @albums.each_with_index do  |album,index|%>
+      <% @album_images = album.album_images.order("order_no ASC") %>
+      <% if !@album_images.blank? %>
+        <% @album_images.each_with_index do |album_image,sub_index|%>
+          <% if sub_index == 0 %>
+            <div class="sub_div_video" style="height: auto;">
+              <span>
+                <a href= '<%= album_image.album_image %>' rel="prettyPhoto[<%=index%>]" title="<%=album_image.caption if !album_image.blank? and !album_image.caption.blank?%>"><%= image_tag album_image.album_image.url,:width=>"208",:height=>"150" %></a>
+              </span>
+              <span>
+                <%= album.title%>	
+              </span>
+            </div>
+          <% else %>
+            <a href= '<%= album_image.album_image %>' rel="prettyPhoto[<%=index%>]" title="<%=album_image.caption if !album_image.blank? and !album_image.caption.blank?%>"></a>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>

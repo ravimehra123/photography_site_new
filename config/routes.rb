@@ -1,7 +1,11 @@
 NewProject::Application.routes.draw do
   root :to => 'home#index'
   devise_for :users
+  resources :album_images
 
+  resources :albums
+
+  
   namespace :admin do
     resources :dashboards, :only => "index"
     resources :pages
@@ -13,9 +17,7 @@ NewProject::Application.routes.draw do
   get "home/about"
   get "home/contact_us"
 
-  resources :album_images
-
-  resources :albums
+  
 
 
   # The priority is based upon order of creation:
