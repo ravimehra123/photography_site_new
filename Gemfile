@@ -8,7 +8,13 @@ gem 'ckeditor_rails'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # gem 'sqlite3'
-gem 'mysql2'
+
+group :development do
+ gem 'mysql2'
+end
+group :production do
+ gem 'pg'
+end
 
 
 # Gems used only for assets and not required
