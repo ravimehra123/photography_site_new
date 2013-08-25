@@ -22,7 +22,7 @@
       <li><img alt="Photo2" src="/assets/photo2.png" width="100%" /></li>
       <li><img alt="Photo3" src="/assets/photo3.png" width="100%" /></li> -->
       <% AlbumImage.all.each do |album_image|  %>
-        <li><%= image_tag album_image.album_image.url(:large) %></li>     
+        <li><%#= image_tag album_image.album_image.url(:large) %></li>     
       <% end %>
     </ul>
   </div>  
