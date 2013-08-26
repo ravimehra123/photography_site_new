@@ -17,8 +17,16 @@ NewProject::Application.configure do
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = false
 
+  config.assets.enabled = true 
   # Generate digests for assets URLs
   config.assets.digest = true
+  config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
+  asset_sync_config_file = File.join(Rails.root, 'config', 'asset_sync.yml')
+  ASSETCONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(asset_sync_config_file)))[Rails.env]
+  ASSETCONFIG.each do |k,v|
+    ENV[k.upcase] ||= v
+  end
+  config.action_controller.asset_host = "//#{ENV['staticimages']}.s3.amazonaws.com"
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
