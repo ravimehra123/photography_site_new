@@ -17,7 +17,7 @@ NewProject::Application.configure do
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-  config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
+  # config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
   config.action_controller.asset_host = "//#{ENV['staticimages']}.s3.amazonaws.com"
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false

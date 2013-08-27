@@ -20,7 +20,7 @@ NewProject::Application.configure do
   config.assets.enabled = true 
   # Generate digests for assets URLs
   config.assets.digest = true
-  config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
+  # config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
   asset_sync_config_file = File.join(Rails.root, 'config', 'asset_sync.yml')
   ASSETCONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(asset_sync_config_file)))[Rails.env]
   ASSETCONFIG.each do |k,v|
