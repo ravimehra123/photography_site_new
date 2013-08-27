@@ -1,8 +1,6 @@
 NewProject::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  config.asset_sync.aws_access_key_id = ENV['1D8S6N5SRNV1J2S0M3R2']
-  config.asset_sync.aws_secret_access_key = ENV['VnEiLgWaeWdaq/2gkOwUScHMriBRR0DUYmg9ZPQa']
-  config.asset_sync.fog_directory = ENV['staticimages']
+
   # Code is not reloaded between requests
   config.cache_classes = true
 
