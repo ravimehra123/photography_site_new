@@ -1,5 +1,5 @@
 class AlbumImage < ActiveRecord::Base
-  attr_accessible :album_image, :album_id, :status, :upload_date
+  attr_accessible :album_image, :album_id, :status, :upload_date, :caption
   belongs_to :album 
 
 	# validates_attachment_presence :album_image
