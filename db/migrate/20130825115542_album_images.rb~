@@ -1,5 +1,5 @@
 class AlbumImages < ActiveRecord::Migration
-  def chnage
+  def change
     create_table "album_images", :force => true do |t|
       t.integer "album_id"
       t.string  "album_image_file_name",    :limit => 100

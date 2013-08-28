@@ -1,0 +1,65 @@
+<h1>Album: <%= @album.title %></h1>
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+<p>
+  <strong>Upload Date:</strong>
+  <%= @album.upload_date %>
+</p>
+<p>
+  <strong>Modify Date:</strong>
+  <%= @album.modify_date %>
+</p>
+<p>
+  <strong>Status:</strong>
+  <%= @album.status %>
+</p>
+<% if !@album_images.blank? %>
+	<%= form_tag :action => "update_caption", :id => @album.id%>	
+	<% @position = 1..@album_images.count %>
+	<% @check_no = 3 %>
+	<!--<table>
+		
+		<%#index = 1%>
+		<%# @album_images.each do |album_image|%>
+					<td>
+						<a href= '<%#= album_image.album_image %>' class="thickbox" ><%#= image_tag album_image.album_image.url(:small) %></a><br />
+						<%#= link_to image_tag("notebook_delete.png", :alt=>"Delete",:border=>"0",  :title=>"Delete"), album_image, :confirm => 'Are you sure?', :method => :delete %>
+						<%#= link_to image_tag("upside_arrow.jpg",:width => '18px'),:controller=>"album_images",:action=>"change_position",:id=>album_image.id,:change_id=>@album_images[index - 2].id if index != 1 %>
+      					&nbsp;
+      			<%#= link_to image_tag("downside_arrow.jpg",:width => '18px'),:controller=>"album_images",:action=>"change_position",:id=>album_image.id,:change_id=> @album_images[index].id if !@album_images[index].blank?%>
+						caption<br />
+						<%#= text_field_tag "caption[#{album_image.id}]", album_image.caption %>
+					</td>
+				<%# if index % 4 == 0 %>
+					</tr><tr>
+				<%# end %>
+				<%# index = index + 1 %>
+		<%# end %>
+		</tr>
+	</table>-->
+	<table class="list_table_2">
+	  <tr>
+	    <th>Image</th>
+	    <th>caption</th>
+	    <th>Position</th>
+	    <th>Action</th>
+	  </tr>
+	  <%index = 1%>
+	  <% @album_images.each do |album_image|%>
+	    <tr>
+	      <td><%= image_tag album_image.album_image.url(:small) %></td>
+	      <td><%= text_field_tag "caption[#{album_image.id}]", album_image.caption %></td>
+	      <td>
+	        <%= link_to image_tag("upside_arrow.jpg",:width => '18px'),:controller=>"album_images",:action=>"change_position",:id=>album_image.id,:change_id=>@album_images[index - 2].id if index != 1 %>
+      		&nbsp;
+      		<%= link_to image_tag("downside_arrow.jpg",:width => '18px'),:controller=>"album_images",:action=>"change_position",:id=>album_image.id,:change_id=> @album_images[index].id if !@album_images[index].blank?%>
+	      </td>
+	      <td><%= link_to image_tag("notebook_delete.png", :alt=>"Delete",:border=>"0",  :title=>"Delete"), album_image, :confirm => 'Are you sure?', :method => :delete %></td>
+	    </tr>
+	    <% index = index + 1 %>
+	  <% end %>
+	</table>
+	<%= submit_tag "Update Caption"%>
+<% end %>

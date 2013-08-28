@@ -2,14 +2,18 @@
 <html>
 <head>
   <title>NewProject</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<div class="wrapper">
 		<%= render 'layouts/header'%>
+
+		<%#= image_tag('http://storyteller-development.s3.amazonaws.com/staticimages/photo1.png') %>
 		<div class="container">
+			<%=flash[:notice]%>
 			<%= yield %>
 		</div>
 	</div>

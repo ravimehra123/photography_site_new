@@ -1,0 +1,28 @@
+<h1>Album Images</h1>
+<div align = "right"><%= link_to "New Album Image", new_admin_album_image_path %></div>
+
+<table border=0 class="list_table_2">
+  <tr>
+    <th>Album</th>
+    <th>Album Image File Name</th>
+    <th>Status</th>
+    <th>Order</th>
+    <th>Caption</th>
+    <th>Upload Date</th>
+    <th colspan = "3">Action</th>
+  </tr>
+  <% for album_image in @album_images %>
+    <tr>
+      <td><%= album_image.album_id %></td>
+      <td><%= image_tag album_image.album_image.url(:small)%></td>
+      <td><%= album_image.status %></td>
+      <td><%= album_image.order_no %></td>
+      <td><%= album_image.caption %></td>
+      <td><%= album_image.upload_date %></td>
+      <td><%= link_to image_tag("view_icon.png", :alt=>"View",:border=>"0",  :title=>"View"), album_image %></td>
+      <td><%= link_to image_tag("Text-Edit-Icon.png", :alt=>"Edit",:border=>"0",  :title=>"Edit"), edit_admin_album_image_path(album_image) %></td>
+      <td><%= link_to image_tag("notebook_delete.png", :alt=>"Delete",:border=>"0",  :title=>"Delete"), [:admin,album_image], :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+

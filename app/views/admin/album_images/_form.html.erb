@@ -1,0 +1,14 @@
+<%= form_for [:admin,@album_image], :html => { :multipart => true } do |f| %>
+  <%#= f.error_messages %>
+  <% @albums = Album.all %>
+	<p>
+    <%= f.label :album_id,  "Album"%>
+    <%= f.collection_select :album_id, @albums, :id, :title, :include_blank => 'Select Album' %>
+  </p>
+	<p>
+    <%= f.label :album_image %>
+    <%= f.file_field :album_image %>
+  </p>
+	
+  <p><%= f.submit %></p>
+<% end %>
