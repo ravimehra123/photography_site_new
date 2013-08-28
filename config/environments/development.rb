@@ -1,15 +1,4 @@
 NewProject::Application.configure do
-  config.fog_provider = 'AWS'
-  config.asset_sync.aws_access_key = ENV['1D8S6N5SRNV1J2S0M3R2']
-config.asset_sync.aws_access_secret = ENV['VnEiLgWaeWdaq/2gkOwUScHMriBRR0DUYmg9ZPQa']
-config.asset_sync.aws_bucket = ENV['staticimages']
-config.asset_sync.aws_region = "eu-west-1"
-
-  asset_sync_config_file = File.join(Rails.root, 'config', 'asset_sync.yml')
-  ASSETCONFIG = HashWithIndifferentAccess.new(YAML::load(IO.read(asset_sync_config_file)))[Rails.env]
-  ASSETCONFIG.each do |k,v|
-    ENV[k.upcase] ||= v
-  end
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -24,7 +13,6 @@ config.asset_sync.aws_region = "eu-west-1"
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
   # config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
-  config.action_controller.asset_host = "//#{ENV['staticimages']}.s3.amazonaws.com"
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
 
