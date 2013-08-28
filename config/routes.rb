@@ -1,7 +1,7 @@
 NewProject::Application.routes.draw do
   root :to => 'home#index'
   devise_for :users do
-    # get "/admin", :to => "devise/sessions#new"
+    get "/admin", :to => "devise/sessions#new"
     get "/admin/logout" => 'devise/sessions#destroy'
   end
   resources :album_images
