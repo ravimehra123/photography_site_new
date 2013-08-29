@@ -57,6 +57,8 @@ class AlbumImagesController < ApplicationController
     redirect_to :controller => "albums",:action => "show_images",:id =>@album_image_1.album_id , :notice => "Successfully updated"
   end
 
+def upload
+end
   
 	def new_upload
 		# @albumimages = AlbumImage.create(:album_id => 1)

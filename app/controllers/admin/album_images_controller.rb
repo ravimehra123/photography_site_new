@@ -71,7 +71,6 @@ class Admin::AlbumImagesController < ApplicationController
 		# @albumimages = AlbumImage.create(:album_id => 1)
 		if !params[:files].blank?
 			#render :text=>"<pre>"+ params.to_yaml and return true
-			
 			params[:files].each do|f|		
 				@albumimages = AlbumImage.new(:album_image => f,:album_id=>params[:id], :status=>'1', :upload_date => Time.now)		
 				@albumimages.order_no = AlbumImage.last.blank? ? "0" : AlbumImage.last.id
