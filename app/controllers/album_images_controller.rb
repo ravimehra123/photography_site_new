@@ -1,6 +1,7 @@
 class AlbumImagesController < ApplicationController
   # before_filter :user_role_auth
   # layout 'admin'
+   # layout 'admin'
   def index
     @album_images = AlbumImage.all
   end
