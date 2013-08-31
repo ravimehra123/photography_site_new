@@ -14,6 +14,7 @@
 // require jquery.sliders
 
 //= require jquery
+//= require jquery_ujs
 // application
 //= require ckeditor-jquery
 //= easySlider1.7.js
