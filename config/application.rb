@@ -10,13 +10,13 @@ if defined?(Bundler)
 end
 
 module NewProject
-  class Application < Rails::Application
+ class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
     # Custom directories with classes and modules you want to be autoloadable.
-    # config.autoload_paths += %W(#{config.root}/extras)
+    config.autoload_paths += %W(#{config.root}/lib/algorithm)
 
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
@@ -41,6 +41,7 @@ module NewProject
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
+
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
@@ -53,10 +54,10 @@ module NewProject
     config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    # Enable the asset pipeline
     config.assets.enabled = true
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
+
 end
