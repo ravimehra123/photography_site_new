@@ -79,7 +79,7 @@ class Admin::AlbumImagesController < ApplicationController
 			# render :json => [ActiveSupport::JSON.encode({ :size => @albumimages.album_image_file_size })]
 		end
 		
-		
+		redirect_to :controller => "admin/albums",:action => "show_images",:id =>params[:id] , :notice => "Successfully uploaded" 
 		# render :layout=>false and return
 	end
 end

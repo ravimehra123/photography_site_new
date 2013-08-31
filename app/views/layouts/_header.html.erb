@@ -1,10 +1,11 @@
 <!-- raviiiiiiiiiiiiiiiiiiiiii-->
 <div class="header">
 	<div class="top-menu">
-    <%= link_to "GALLERY", :controller=>"albums", :action=>"image_album", :id=>1 %> |
+    <%= link_to "GALLERY", :controller=>"/admin/albums", :action=>"image_album", :id=>1 %> |
   	<%#= link_to "ADMIN GALLERY", albums_path %> 
-    <%#= link_to "ABOUT ME", home_about_path %> 
-    <%#= link_to "CONTACT", home_contact_us_path %> 
+    <%= link_to "ABOUT ME", home_about_path %>  |
+    <%= link_to "CONTACT", home_contact_us_path %> | 
+    <%= link_to "Admin", :controller=>"/admin/albums", :action=>"index" %>  
   	<% if !@pages.blank?%>
       <% @pages.each do |page| %>
         <%= link_to page.title, "/#{page.title}/", :title => page.title, :id => page.title%>|
