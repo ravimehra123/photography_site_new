@@ -29,7 +29,7 @@
 	}
 	#gallery ul a:hover { color: #fff; }
 	</style>
-<h2 class="index_heading">My Gallary</h2>
+<h2 class="index_heading">My Gallery</h2>
 <% if !@albums.blank? %>  
   <div class="main_div_video" >
     <% @albums.each_with_index do  |album,index|%>
@@ -41,9 +41,7 @@
               <span>
                 <a href= '<%= album_image.album_image %>' rel="prettyPhoto[<%=index%>]" title="<%=album_image.caption if !album_image.blank? and !album_image.caption.blank?%>"><%= image_tag album_image.album_image.url,:width=>"208",:height=>"150" %></a>
               </span>
-              <span>
-                <%= album.title%>	
-              </span>
+              <div><span><%= album.title%></span></div>
             </div>
           <% else %>
             <a href= '<%= album_image.album_image %>' rel="prettyPhoto[<%=index%>]" title="<%=album_image.caption if !album_image.blank? and !album_image.caption.blank?%>"></a>
