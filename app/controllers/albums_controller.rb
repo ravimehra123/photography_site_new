@@ -1,5 +1,5 @@
 class AlbumsController < ApplicationController
-  before_filter :user_role_auth
+  # before_filter :user_role_auth
 	# layout 'admin'
 	def index
     @albums = Album.order("order_no ASC")

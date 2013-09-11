@@ -10,8 +10,8 @@ gem 'ckeditor_rails'
 # gem 'sqlite3'
 
 group :development do
- #gem 'mysql2'
-gem 'pg'
+# gem 'mysql2'
+ gem 'pg'
 end
  group :production do
  gem 'pg'
@@ -33,8 +33,6 @@ end
 gem 'jquery-rails'
 
 gem 'paperclip', '~> 3.0'
-
-gem 'devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

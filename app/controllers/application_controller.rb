@@ -6,7 +6,4 @@ class ApplicationController < ActionController::Base
     @pages = Page.all
   end
 
-  # def authenticate_admin!
-  #   redirect_to admin_login_path unless (current_user and current_user.admin == true)
-  # end
 end
