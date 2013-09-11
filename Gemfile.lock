@@ -61,7 +61,6 @@ GEM
     mocha (0.14.0)
       metaclass (~> 0.0.1)
     multi_json (1.7.9)
-    mysql2 (0.3.13)
     nifty-generators (0.4.6)
     paperclip (3.5.1)
       activemodel (>= 3.0.0)
@@ -123,7 +122,6 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   mocha
-  mysql2
   nifty-generators
   paperclip (~> 3.0)
   pg
