@@ -10,8 +10,8 @@ gem 'ckeditor_rails'
 # gem 'sqlite3'
 
 group :development do
-# gem 'mysql2'
- gem 'pg'
+ gem 'mysql2'
+ #gem 'pg'
 end
  group :production do
  gem 'pg'

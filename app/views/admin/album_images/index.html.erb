@@ -21,7 +21,7 @@
       <td><%= album_image.upload_date %></td>
       <td><%= link_to image_tag("view_icon.png", :alt=>"View",:border=>"0",  :title=>"View"), album_image %></td>
       <td><%= link_to image_tag("Text-Edit-Icon.png", :alt=>"Edit",:border=>"0",  :title=>"Edit"), edit_admin_album_image_path(album_image) %></td>
-      <td><%= link_to image_tag("notebook_delete.png", :alt=>"Delete",:border=>"0",  :title=>"Delete"), [:admin,album_image], :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to image_tag("notebook_delete.png", :alt=>"Delete",:border=>"0",  :title=>"Delete"), [:admin,album_image], :confirm => 'Are you sure?', :method => :delete %>
     </tr>
   <% end %>
 </table>
