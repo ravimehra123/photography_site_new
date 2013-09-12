@@ -66,13 +66,13 @@ class Admin::AlbumImagesController < ApplicationController
 			params[:files].each do|f|		
 				@albumimages = AlbumImage.new(:album_image => f,:album_id=>params[:id], :status=>'1', :upload_date => Time.now)		
 				@albumimages.order_no = AlbumImage.last.blank? ? "0" : AlbumImage.last.id
+        @albumimages.save       
         session[:user_id] = current_user.id
-        @albumimages.save				
 			end
 			# render :json => [ActiveSupport::JSON.encode({ :size => @albumimages.album_image_file_size })]
 		end
 		
-		# redirect_to :controller => "admin/albums",:action => "show_images",:id =>params[:id] , :notice => "Successfully uploaded" 
+		redirect_to :controller => "admin/albums",:action => "show_images",:id =>params[:id] , :notice => "Successfully uploaded" 
 		# render :layout=>false and return
 	end
 end
