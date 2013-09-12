@@ -9,6 +9,8 @@ class Admin::AlbumImagesController < ApplicationController
  #      redirect_to root_url
  #    end
  #  end
+ before_filter :auth_admin
+ end
   layout "admin"
   def index
     @album_images = AlbumImage.all

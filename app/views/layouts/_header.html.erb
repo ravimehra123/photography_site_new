@@ -1,18 +1,23 @@
 <!-- raviiiiiiiiiiiiiiiiiiiiii-->
 <div class="header" style="margin-top:20px;">
 	<div class="top-menu">
-  	<%# if !@pages.blank?%>
-      <%# @pages.each do |page| %>
-        <!-- <%#= link_to page.title, "/#{page.title}/", :title => page.title, :id => page.title%>| -->
-      <%# end %>
-    <%# end %>
-    <%# if current_user and current_user.admin == true%>
-    <%#= link_to "Admin", admin_dashboards_path %> 
-    <%#end%>
-    <%= link_to "GALLERY", :controller=>"/admin/albums/image_album/1", :action=>"index" %> /
-    <%= link_to "CONTACT", :controller => "/home", :action=>"contact_us" %> /
-    <%= link_to "ABOUT ME", :controller => "/home", :action=>"about" %> /
-    <%= link_to "ADMIN", :controller=>"/admin/albums", :action=>"index" %> 
+    <%= link_to "GALLERY", :controller=>"/albums/image_album/1", :action=>"index" %> /
+  	<% if !@pages.blank?%>
+      <% @pages.each_with_index do |page,i| %>
+      <%if ((i + 1) == @pages.length)%>
+        /
+      <%end%>
+        <%= link_to page.title.upcase, "/#{page.title}/", :title => page.title, :id => page.title%>
+      <% end %>
+    <% end %>
+    <%#= link_to "GALLERY", :controller=>"/admin/albums/image_album/1", :action=>"index" %> 
+    <%#= link_to "CONTACT", :controller => "/home", :action=>"contact_us" %> 
+    <%#= link_to "ABOUT ME", :controller => "/home", :action=>"about" %> 
+    <%#= link_to "ADMIN", :controller=>"/admin/albums", :action=>"index" %> 
+    <% if current_user %>
+     / <%= link_to "ADMIN", admin_dashboards_path %>
+     / <%= link_to "Log out", logout_path(current_user.id), :method => :delete%>
+    <% end %>
   </div>
   <div class="logo"><%= link_to image_tag('poonam_logo.png'), root_url%></div>
 </div>

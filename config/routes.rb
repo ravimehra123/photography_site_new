@@ -1,4 +1,5 @@
 NewProject::Application.routes.draw do
+
   root :to => 'home#index'
   resources :album_images
 
@@ -11,13 +12,19 @@ NewProject::Application.routes.draw do
     resources :album_images
     resources :albums
   end
-
+  match "admin" => "admin/dashboards#index"
   resources :pages
   get ":permalink" => "pages#show", :as => :permalink
 
   get "home/about"
   get "home/contact_us"
 
+  # get "log_out" => "sessions#destroy", :as => "log_out"
+  # get "log_in" => "sessions#new", :as => "log_in"
+  # get "sign_up" => "users#new", :as => "sign_up"
+  resources :users
+  resources :sessions
+  match 'logout/:id' => "sessions#destroy", :as => "logout"
   
 
 
