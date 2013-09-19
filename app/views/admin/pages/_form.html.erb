@@ -1,12 +1,13 @@
-<%= form_for [:admin, @page] do |f| %>
-  <%#= f.error_messages %>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :content %><br />
-  <%= f.text_area :content, :class => "ckeditor" %>
-  </p>
-  <p><%= f.submit %></p>
-<% end %>
+<div class="h_title">New Page</div>
+  <%= form_for [:admin, @page] do |f| %>
+    <%#= f.error_messages %>
+    <p class="element">
+      <%= f.label :title %><br />
+      <%= f.text_field :title, :class=>"text"%>
+    </p>
+    <p class="element">
+      <%= f.label :content %><br />
+    <%= f.text_area :content, :class => "ckeditor" %>
+    </p>
+    <p class="add"><%= f.submit 'Save Page'%></p>
+  <% end %>

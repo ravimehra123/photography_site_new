@@ -1,6 +1,6 @@
 <%# title "Admin/Pages" %>
 <h1>Set Site Pages</h1>
-<div align ="right"><%= link_to "New Admin/Page", new_admin_page_path, :style=>"text-color:#ffffff"%></div>
+<div align ="right" class="new_album"><%= link_to "New Admin/Page", new_admin_page_path, :style=>"text-color:#ffffff"%></div>
 <table id="insured_list" border=1 class="list_table_2">
   <tr>
     <th>Title</th>
@@ -11,10 +11,10 @@
     <tr>
       <td><%= page.title %></td>
       <!-- <td><%#= page.content %></td> -->
-      <td><%= link_to "Show", [:admin, page] %></td>
-      <td><%= link_to "Edit", edit_admin_page_path(page) %></td>
-      <td><%= link_to "Destroy", [:admin, page], :confirm => 'Are you sure?', :method => :delete %></td>
-	    <td><%= link_to "click here", "/#{page.title}/", :id => page.title %>
+      <td class="up_img"><%= link_to "Show", [:admin, page] %></td>
+      <td class="up_img"><%= link_to "Edit", edit_admin_page_path(page) %></td>
+      <td class="up_img"><%= link_to "Destroy", [:admin, page], :confirm => 'Are you sure?', :method => :delete %></td>
+	    <td class="up_img"><%= link_to "click here", "/#{page.title}/", :id => page.title %>
     </tr>
   <% end %>
 </table>

@@ -1,18 +1,45 @@
-<!-- raviiiiiiiiiiiiiiiiiiiiii-->
-<%#= render 'layouts/header'%>
-<div class="header">
-	<div class="top-menu">
-    <%= link_to "HOME", root_url %> /
-    <%= link_to "GALLERY", :controller=>"/admin/albums", :action=>"index" %> /
-    <%#= link_to "CONTACT", :controller => "/home", :action=>"contact_us" %>
-    <%#= link_to "ABOUT ME", :controller => "/home", :action=>"about" %>
-    <%#= link_to "ADMIN", :controller=>"/admin/albums", :action=>"index" %>
-    <%= link_to "SET PAGES", admin_pages_path %> 
-    <% if current_user %>
-     / <%= link_to "LOGOUT", logout_path(current_user.id), :method => :delete%>
-    <% else %>
-    / <%= link_to "LOGIN", new_session_path %>
-    <% end %>
+  <div id="header">
+    <div id="top">
+      <div class="left">
+        <p><b>Poonam Jadhwani-Admin Panel</b></p>
+      </div>
+      <div class="right">
+        <div class="align-right">
+          <p>Welcome, <strong>Admin</strong> [ <a href="<%=logout_path(current_user.id)%>">logout</a> ]</p>
+        </div>
+      </div>
+    </div>
+    <div id="nav">
+      <ul>
+        <li class="upp"><a href="<%=root_url%>">Home</a>
+          <!-- <ul>
+            <li>&#8250; <a href="">Visit site</a></li>
+            <li>&#8250; <a href="">Reports</a></li>
+            <li>&#8250; <a href="">Add new page</a></li>
+            <li>&#8250; <a href="">Site config</a></li>
+          </ul> -->
+        </li>
+        <li class="upp"><a href="#">Gallery</a>
+          <ul>
+            <li>&#8250;<%= link_to "Show Gallery", :controller=>"/admin/albums", :action=>"index" %></li>
+            <li>&#8250; <a href="">Add new</a></li>
+            <!-- <li>&#8250; <a href="">Add new gallery</a></li>
+            <li>&#8250; <a href="">Categories</a></li> -->
+          </ul>
+        </li>
+        <li class="upp"><a href="#">Set Pages</a>
+          <ul>
+            <li>&#8250; <%=link_to "Show All Pages", admin_pages_path %></li>
+            <li>&#8250;<%=link_to "Add new", new_admin_page_path %></li>
+            <!-- <li>&#8250; <a href="">Lock users</a></li> -->
+          </ul>
+        </li>
+        <li class="upp"><a href="#">Settings</a>
+          <ul>
+            <li>&#8250; <a href="">Dummy</a></li>
+            <li>&#8250; <a href="">Dummy</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="logo"><%= link_to image_tag('poonam_logo.png'), root_url%></div>
-</div>

@@ -1,13 +1,13 @@
 <h1>My List of Albums</h1>
-<div align ="right" class="new-btn"><%= link_to "Create a new album", new_admin_album_path %></div>
+<div align ="right" class="new_album"><%= link_to "Create a new album", new_admin_album_path %></div>
 
 <table id="insured_list" border=1 class="list_table_2">
   <thead>
   <tr>
-    <th class="sort2">Title</th>
-    <th class="sort2">Upload Date</th>
-    <th class="sort2">Modify Date</th>
-    <th class="sort2">Image Count</th>
+    <th scope="col">Title</th>
+    <th scope="col">Upload Date</th>
+    <th scope="col">Modify Date</th>
+    <th scope="col">Image Count</th>
     <th>Position</th>
     <th>Manage Image</th>
     <th>View Album Images</th>
@@ -27,8 +27,8 @@
       &nbsp;
       <%= link_to image_tag("downside_arrow.jpg",:width => '18px'),:action=>"change_position",:id=>album.id,:change_id=> @albums[index.to_i + 1].id if !@albums[index.to_i + 1].blank?%>
     </td>
-      <td><%= link_to "Upload Image/s", :controller => "album_images", :action => "upload", :id=> album %></td>
-      <td><%= link_to "View Image/s", :action => "show_images", :id=> album %></td>
+      <td class="up_img"><%= link_to "Upload Image/s", :controller => "album_images", :action => "upload", :id=> album %></td>
+      <td class="up_img"><%= link_to "View Image/s", :action => "show_images", :id=> album %></td>
       <td><%= link_to image_tag("view_icon.png", :alt=>"View",:border=>"0",  :title=>"View"), [:admin,album] %></td>
       <td><%= link_to image_tag("Text-Edit-Icon.png", :alt=>"Edit",:border=>"0",  :title=>"Edit"), edit_admin_album_path(album) %></td>
       <td><%= link_to image_tag("notebook_delete.png", :alt=>"Delete",:border=>"0",  :title=>"Delete"), [:admin,album], :confirm => 'Are you sure?', :method => :delete %></td>

@@ -1,13 +1,19 @@
-<h1>Admin Login</h1>
 
-<%= form_tag sessions_path do %>
-  <p>
-    <%= label_tag :email %><br />
-    <%= text_field_tag :email, params[:email] %>
-  </p>
-  <p>
-    <%= label_tag :password %><br />
-    <%= password_field_tag :password %>
-  </p>
-  <p class="button"><%= submit_tag "Log in" %></p>
-<% end %>
+<div class="wrap">
+	<div id="content">
+		<div id="main">
+
+			<div class="full_w">
+				<h1 class="log">Admin Login</h1>
+				<%= form_tag sessions_path do %>
+					<%= label_tag :email %>
+					<%= text_field_tag :email, params[:email], :class =>"text",:id=>'login' %>
+					<%= label_tag :password %>
+					<%= text_field_tag :password,nil,:type => "password",:class =>"text" ,:id => 'pass'%>
+					<div class="sep"></div>
+					<%= submit_tag "Login", :class => 'ok' %>
+				<%end%>
+			</div>
+		</div>
+	</div>
+</div>

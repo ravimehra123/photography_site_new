@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	layout 'login'
   def new
   	#render :text=>'<pre>' + params.to_yaml and return
 	end
